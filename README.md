@@ -18,4 +18,4 @@ IV. Deploy the following files in this order :
     7. The Contact flexipage (Optional since it requires to activate it)
     8. The Permission Set Allow_Contact_Contactability_Access
 
-V. On your Salesforce org, assign the permission set to your user OR add it to the Permission Set Group of your choice that is linked to your user.
+V. On your Salesforce org, assign the permission set to your user OR add it to the Permission Set Group of your choice that is linked to your user.# Case-DT
