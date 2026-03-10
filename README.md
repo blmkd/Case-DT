@@ -34,7 +34,7 @@ Make sure SFDX is up to date. Run the following command to update it:
 sf update
 ```
 
-[ Full deployment ]
+OPTION A: Full deployment
 ```bash
 sf project deploy start \
 --source-dir force-app/main/default/objects/Contact/fields/HasOptedOutOfPhone__c.field-meta.xml \
@@ -53,7 +53,7 @@ sf project deploy start \
 --source-dir force-app/main/default/permissionsets/Allow_Contact_Contactability_Access.permissionset-meta.xml
 ```
 
-[Partial deployment]
+OPTION B: Partial deployment
 If you do not want to overwrite the layouts, feel free not to include the layouts in the deployment, and manually place the new fields on your own layouts or directly on your own flexipages, according to your preferences.
 In that case, the deployment command would be:
 ```bash
