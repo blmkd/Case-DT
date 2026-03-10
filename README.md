@@ -27,13 +27,14 @@ git clone https://github.com/blmkd/Case-DT.git
 9. The Contact flexipage (optional since it requires activation)
 10. The Permission Set Allow_Contact_Contactability_Access
 
-You can use the following SFDX command to automate the deployment:
+You can use one of the following SFDX commands to automate the deployment of this project:
 
 Make sure SFDX is up to date. Run the following command to update it:
 ```bash
 sf update
 ```
 
+[ Full deployment ]
 ```bash
 sf project deploy start \
 --source-dir force-app/main/default/objects/Contact/fields/HasOptedOutOfPhone__c.field-meta.xml \
@@ -49,6 +50,23 @@ sf project deploy start \
 --source-dir "force-app/main/default/layouts/Contact-Contact %28Support%29 Layout.layout-meta.xml" \
 --source-dir "force-app/main/default/layouts/Contact-Contact %28Sales%29 Layout.layout-meta.xml" \
 --source-dir "force-app/main/default/layouts/Contact-Contact %28Marketing%29 Layout.layout-meta.xml" \
+--source-dir force-app/main/default/permissionsets/Allow_Contact_Contactability_Access.permissionset-meta.xml
+```
+
+[Partial deployment]
+If you do not want to overwrite the layouts, feel free not to include the layouts in the deployment, and manually place the new fields on your own layouts or directly on your own flexipages, according to your preferences.
+In that case, the deployment command would be:
+```bash
+sf project deploy start \
+--source-dir force-app/main/default/objects/Contact/fields/HasOptedOutOfPhone__c.field-meta.xml \
+--source-dir force-app/main/default/objects/Contact/fields/Contactability_status__c.field-meta.xml \
+--source-dir force-app/main/default/objects/Contact/fields/Normalised_Phone__c.field-meta.xml \
+--source-dir force-app/main/default/objects/Contact/fields/Normalised_Email__c.field-meta.xml \
+--source-dir force-app/main/default/classes/ContactDuplicateController.cls \
+--source-dir force-app/main/default/classes/ContactDuplicateController.cls-meta.xml \
+--source-dir force-app/main/default/classes/ContactDuplicateControllerTest.cls \
+--source-dir force-app/main/default/classes/ContactDuplicateControllerTest.cls-meta.xml \
+--source-dir force-app/main/default/lwc/getDuplicatedContacts \
 --source-dir force-app/main/default/permissionsets/Allow_Contact_Contactability_Access.permissionset-meta.xml
 ```
 
