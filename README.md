@@ -29,6 +29,11 @@ git clone https://github.com/blmkd/Case-DT.git
 
 You can use the following SFDX command to automate the deployment:
 
+Make sure SFDX is up to date. Run the following command to update it:
+```bash
+sf update
+```
+
 ```bash
 sf project deploy start \
 --source-dir force-app/main/default/objects/Contact/fields/HasOptedOutOfPhone__c.field-meta.xml \
