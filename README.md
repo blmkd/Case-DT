@@ -1,7 +1,14 @@
+# Case-DT
+
+A Salesforce project to display contact duplicates on contact records.
+
 # Installation
 
 ## I. Clone the project
+
+```bash
 git clone https://github.com/blmkd/Case-DT.git
+```
 
 ## II. Open the project with VS Code
 
@@ -9,18 +16,19 @@ git clone https://github.com/blmkd/Case-DT.git
 
 ## IV. Deploy the following files in this order
 
-1. object/Contact/HasOptoutOfPhone__c.field-meta.xml  
+1. object/Contact/HasOptoutOfPhone__c.field-meta.xml
 2. object/Contact/Contactability_status__c.field-meta.xml
 3. object/Contact/Normalised_Phone__c.field-meta.xml
 4. object/Contact/Normalised_Email__c.field-meta.xml
-3. ContactDuplicateController Apex class  
-4. ContactDuplicateControllerTest Apex class  
-5. getDuplicatedContacts LWC  
-6. The Contact layouts  
-7. The Contact flexipage (optional since it requires activation)  
-8. The Permission Set `Allow_Contact_Contactability_Access`
+5. ContactDuplicateController Apex class
+6. ContactDuplicateControllerTest Apex class
+7. getDuplicatedContacts LWC
+8. The Contact layouts
+9. The Contact flexipage (optional since it requires activation)
+10. The Permission Set Allow_Contact_Contactability_Access
 
-You can use the SFDX following command to automate the deployment
+You can use the following SFDX command to automate the deployment:
+
 ```bash
 sf project deploy start \
 --source-dir force-app/main/default/objects/Contact/fields/HasOptedOutOfPhone__c.field-meta.xml \
@@ -37,14 +45,12 @@ sf project deploy start \
 --source-dir "force-app/main/default/layouts/Contact-Contact %28Sales%29 Layout.layout-meta.xml" \
 --source-dir "force-app/main/default/layouts/Contact-Contact %28Marketing%29 Layout.layout-meta.xml" \
 --source-dir force-app/main/default/permissionsets/Allow_Contact_Contactability_Access.permissionset-meta.xml
-
+```
 
 ## V. Assign Permission Set
 
-On your Salesforce org, assign the permission set 'Allow_Contact_Contactability_Access' to your user,  
+On your Salesforce org, assign the permission set 'Allow_Contact_Contactability_Access' to your user,
 or add it to a Permission Set Group linked to your user.
-
----
 
 ## Feature preview
 
