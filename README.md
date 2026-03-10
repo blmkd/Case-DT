@@ -81,5 +81,8 @@ or add it to a Permission Set Group linked to your user.
 LWC Pagination included
 <img width="1197" height="371" alt="image" src="https://github.com/user-attachments/assets/4f67815d-7899-447a-9e6a-6e7c69b2d50d" />
 
+
+
+
 Previous version without LWC Pagination included, but an SOQL Limit 5 was placed on the query to restrict the number of eventual contact duplicates
 <img width="1202" height="242" alt="Screenshot 2026-03-09 at 22 00 38" src="https://github.com/user-attachments/assets/51d8973c-1b7f-4590-a28d-3cd4943e9a20" />
