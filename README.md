@@ -20,6 +20,25 @@ git clone https://github.com/blmkd/Case-DT.git
 7. The Contact flexipage (optional since it requires activation)  
 8. The Permission Set `Allow_Contact_Contactability_Access`
 
+You can use the SFDX following command to automate the deployment
+```bash
+sf project deploy start \
+--source-dir force-app/main/default/objects/Contact/fields/HasOptedOutOfPhone__c.field-meta.xml \
+--source-dir force-app/main/default/objects/Contact/fields/Contactability_status__c.field-meta.xml \
+--source-dir force-app/main/default/objects/Contact/fields/Normalised_Phone__c.field-meta.xml \
+--source-dir force-app/main/default/objects/Contact/fields/Normalised_Email__c.field-meta.xml \
+--source-dir force-app/main/default/classes/ContactDuplicateController.cls \
+--source-dir force-app/main/default/classes/ContactDuplicateController.cls-meta.xml \
+--source-dir force-app/main/default/classes/ContactDuplicateControllerTest.cls \
+--source-dir force-app/main/default/classes/ContactDuplicateControllerTest.cls-meta.xml \
+--source-dir force-app/main/default/lwc/getDuplicatedContacts \
+--source-dir "force-app/main/default/layouts/Contact-Contact Layout.layout-meta.xml" \
+--source-dir "force-app/main/default/layouts/Contact-Contact %28Support%29 Layout.layout-meta.xml" \
+--source-dir "force-app/main/default/layouts/Contact-Contact %28Sales%29 Layout.layout-meta.xml" \
+--source-dir "force-app/main/default/layouts/Contact-Contact %28Marketing%29 Layout.layout-meta.xml" \
+--source-dir force-app/main/default/permissionsets/Allow_Contact_Contactability_Access.permissionset-meta.xml
+
+
 ## V. Assign Permission Set
 
 On your Salesforce org, assign the permission set 'Allow_Contact_Contactability_Access' to your user,  
