@@ -19,6 +19,16 @@
         <field>Contact.HasOptedOutOfPhone__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Normalised_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.Normalised_Phone__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Allow_Contact_Contactability_Access</label>
     <objectPermissions>

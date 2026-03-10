@@ -16,17 +16,4 @@ public with sharing class ContactDuplicateControllerTest {
         System.assertEquals(contacts[2].Id, duplicateContacts[0].Id);
     }
 
-    @isTest
-    static void getNormalisedPhoneTest() {
-        System.assertEquals('0987654321', ContactDuplicateController.getNormalisedPhone('098-765-4321'));
-        System.assertEquals('2697654321', ContactDuplicateController.getNormalisedPhone('+(269)7654321'));
-        System.assertEquals(null, ContactDuplicateController.getNormalisedPhone(null));
-    }
-
-    @isTest
-    static void getNormalisedEmailTest() {
-        System.assertEquals('test@test.com', ContactDuplicateController.getNormalisedEmail('test@test.com'));
-        System.assertEquals('test@test.com', ContactDuplicateController.getNormalisedEmail('TEST@TEST.COM'));
-        System.assertEquals(null, ContactDuplicateController.getNormalisedEmail(null));
-    }
 }
